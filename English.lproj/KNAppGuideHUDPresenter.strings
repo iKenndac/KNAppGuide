@@ -1,0 +1,13 @@
+/* 
+   KNAppGuideHUDPresenter.strings
+   KNAppGuide
+
+   Created by Daniel Kennett on 15/05/2009.
+   Copyright 2009 KennettNet Software, Limited. All rights reserved.
+ */
+
+
+"next button title" = "→";
+"done button title" = "✔";
+"progress label" = "Step %d of %d";
+"default window title" = "%@ Help"; /* i.e., Music Rescue Help */

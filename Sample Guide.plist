@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>KNAppGuide Guide</string>
+	<key>objectClass</key>
+	<string>KNAppGuide</string>
+	<key>steps</key>
+	<array>
+		<dict>
+			<key>explanation</key>
+			<string>Welcome to the KNAppGuide demo application. This guide was loaded from Sample Guide.plist in the startGuideFromFile: method in MainWindowController, and will walk you through the framework&apos;s features and structure.
+
+To get started, click the → button.</string>
+		</dict>
+		<dict>
+			<key>explanation</key>
+			<string>This HUD is where the user interacts with the guide. It has a few simple controls: 
+
+• The ← button goes back to the previous step.
+• The “Show Me” button performs the action the guide is asking the user to do, if available.
+• The → button moves on to the next step. If the current step is mandatory, the action is performed for the user first.
+• The ✔ button, which replaces the → button at the end of the guide, completes the guide.</string>
+		</dict>
+		<dict>
+			<key>completionRequiredForNextStep</key>
+			<false/>
+			<key>explanation</key>
+			<string>Hopefully you noticed the red circle highlighting the “Your Name” field. This is a view highlight, and currently supports views and toolbar items. 
+
+Clicking the “Show Me” button will automatically fill in the field with some sample text. As this step isn&apos;t mandatory to whatever we&apos;re doing, clicking the → button will move to the next step without filling in the sample text.</string>
+			<key>highlightedItem</key>
+			<string>nameField</string>
+			<key>highlightedItemShouldBeResolved</key>
+			<true/>
+			<key>action</key>
+			<dict>
+				<key>objectClass</key>
+				<string>KNAppGuideEnterTextAction</string>
+				<key>defaultText</key>
+				<string>Some Sample Text</string>
+				<key>textField</key>
+				<string>nameField</string>
+				<key>textFieldShouldBeResolved</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>completionRequiredForNextStep</key>
+			<false/>
+			<key>explanation</key>
+			<string>Here we&apos;re just highlighting a toolbar item for the sake of it. However, this is a good time to point out that wherever possible, you should have your custom actions be able to recognise when they&apos;ve been performed by the user in your UI. That way, the guide will be able to progress without the user having to return to this window to click the → button each time.
+
+Nearly all of the built-in actions support this. Click the toolbar item to see this functionality in action.</string>
+			<key>highlightedItem</key>
+			<string>toolbarItem</string>
+			<key>highlightedItemShouldBeResolved</key>
+			<true/>
+			<key>action</key>
+			<dict>
+				<key>objectClass</key>
+				<string>KNAppGuideClickButtonAction</string>
+				<key>button</key>
+				<string>toolbarItem</string>
+				<key>buttonShouldBeResolved</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>completionRequiredForNextStep</key>
+			<true/>
+			<key>explanation</key>
+			<string>This action is mandatory. If you enter a date into the highlighted picker, the guide will move on to the next step automatically. However, if you don&apos;t, a sample value will be entered for you when you click the → button.
+
+Note: If you changed the date in this picker while the guide was on another step, the sample value won&apos;t be entered and the “Show Me” button will be dimmed so the guide doesn&apos;t replace the user&apos;s real data with our fake data.</string>
+			<key>highlightedItem</key>
+			<string>datePicker</string>
+			<key>highlightedItemShouldBeResolved</key>
+			<true/>
+			<key>action</key>
+			<dict>
+				<key>objectClass</key>
+				<string>KNAppGuideEnterDateAction</string>
+				<key>datePicker</key>
+				<string>datePicker</string>
+				<key>datePickerShouldBeResolved</key>
+				<true/>
+				<key>defaultDate</key>
+				<date>2009-05-14T15:46:52Z</date>
+			</dict>
+		</dict>
+		<dict>
+			<key>explanation</key>
+			<string>KNAppGuide uses a plist file to store guide data. At the moment there&apos;s no guide editor, but the file structure is fairly simple.
+
+If you use custom classes in your guide, you can store the class name in the file and the loader will to the right thing. Most of the properties stored in the file will be set by KVC, so your classes can have arbitrary properties where needed.
+
+Continued...</string>
+		</dict>
+		<dict>
+			<key>explanation</key>
+			<string>To provide a way to link your guide files to your application, you need to supply a resolver when loading your file. When the guide loader encounters a key that also has &lt;key&gt;ShouldBeResolved set to YES, it will ask the resolver to return an object for the value of that key instead of using the key&apos;s value directly.
+
+The included resolver assumes the value in keys to be resolved are key paths, and simply returns the value returned by giving the key path to a base class, which in this case is the window controller for this window.</string>
+		</dict>
+		<dict>
+			<key>explanation</key>
+			<string>You&apos;re done! Thank you for completing this guide, and I hope you like the KNAppGuide framework. For detailed documentation, see the documentation that accompanies the framework and the class headers. 
+
+Click the ✔ button to finish.</string>
+		</dict>
+	</array>
+</dict>
+</plist>

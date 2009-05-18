@@ -1,0 +1,115 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red63\green110\blue116;\red38\green71\blue75;
+\red196\green26\blue22;\red46\green13\blue110;\red100\green56\blue32;\red92\green38\blue153;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 KNAppGuide
+\b0 \
+by Daniel Kennett - {\field{\*\fldinst{HYPERLINK "http://www.kennettnet.co.uk/code/KNAppGuide"}}{\fldrslt http://www.kennettnet.co.uk/code/KNAppGuide}}\
+\
+
+\b What is KNAppGuide?
+\b0 \
+\
+KNAppGuide is a Cocoa framework for adding interactive tutorials to your application. It's very much inspired by Apple Guide from the System 7 era:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 {{\NeXTGraphic MacGuide.png \width10280 \height7720
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+\
+This framework brings this idea to the modern world of Cocoa:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 {{\NeXTGraphic KNAppGuide in a real program.jpg \width13240 \height9740
+}¬}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+\pard\pardeftab720\sl360\ql\qnatural
+
+\b \cf0 Features include:
+\b0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}Beautiful, intuitive tutorials to guide users through your application. A HUD window presents your guide content while a bold, clean highlight highlight the area in your application's UI the user should focus their attention on. \
+{\listtext	\'95	}Intelligent UI handling. The guide will automatically move along as the user performs actions in your app. This makes guides much easier to follow, as your app's user experience isn't fragmented by having to click "Next Step" after every action.\
+{\listtext	\'95	}Easy integration. Using KNAppGuide is easy. Import the framework, build a guide in code or in a file (or a combination of the two). If you have your guide in a file, you can load it and begin its presentation in three lines of code.\
+{\listtext	\'95	}Extensible. If KNAppGuide doesn't do quite what you need, it's fully extensible out of the box - have it interact with your custom controls or present your guide content with your own custom guide UI. The guide loader is smart enough to instantiate any custom classes and set custom values without any modification to it at all.\
+\pard\pardeftab720\sl360\ql\qnatural
+
+\b \cf0 Planned features include:
+\b0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'95	}A program to author help content so you don't have to manually make plists.\
+{\listtext	\'95	}... that's it, so far. Submit feature requests please!\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+\
+
+\b Using KNAppGuide
+\b0 \
+\
+Adding KNAppGuide to your application is simple: \
+\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\ql\qnatural\pardirnatural
+\ls3\ilvl0\cf0 {\listtext	1.	}Add the KNAppGuide framework into your application.\
+{\listtext	2.	}Set up a "Copy Files" build step to your app's build that copies files to the Frameworks folder, and add KNAppGuide to it.\
+{\listtext	3.	}#import <KNAppGuide/KNAppGuide.h> in the class you'd like to use KNAppGuide in.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+To load a guide from file and present it takes an almost negligible amount of code:\
+\
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+
+\f1\fs20 \cf2 \CocoaLigature0 	id\cf0  <\cf3 KNAppGuide\cf0 > guide = [\cf3 KNAppGuide\cf0  \cf4 guideWithName\cf0 :\cf5 @"Sample Guide.plist"\cf0  \
+											 \cf4 resolver\cf0 :[\cf3 KNAppGuideBasicKVCResolver\cf0  \cf4 basicResolverWithBaseObject\cf0 :\cf2 self\cf0 ]];\
+	\
+	\cf3 KNAppGuideHUDPresenter\cf0  *presenter = [[\cf3 KNAppGuideHUDPresenter\cf0  \cf6 alloc\cf0 ] \cf4 initWithGuide\cf0 :guide];\
+	[presenter \cf4 beginPresentation\cf0 ];\
+	[presenter \cf6 release\cf0 ];\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+
+\b Highlighting toolbar items
+\b0 \
+\
+If you want to highlight toolbar items, please be aware that if you want to highlight a "built-in" item such as the Customize, Print, etc items in a toolbar created in Interface Builder, you'll need to be a bit clever due to the way these items are added to the toolbar - you can't just use the toolbar item linked to an IBOutlet, since the built in items are copied into the toolbar, leaving the -toolbar property of your linked item as nil. When this is the case, the framework can't find the toolbar the item is in, and thus can't figure out its location to draw the highlight. \
+\
+Included in the framework is KNToolbarExtensions, an NSToolbar extension that provides the -itemWithIdentifier: method. If you'd like to highlight a built-in toolbar item, you'd need to update your step's highlighted view when the step is about to be displayed. This might be achieved like this:\
+\
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+
+\f1\fs20 \cf7 \CocoaLigature0 #import \cf5 "KNToolBarExtensions.h"\
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 -(\cf2 void\cf0 )presenter:(\cf2 id\cf0  <\cf3 KNAppGuidePresenter\cf0 >)aPresenter willMoveToStep:(\cf2 id\cf0  <\cf3 KNAppGuideStep\cf0 >)aStep inGuide:(\cf2 id\cf0  <\cf3 KNAppGuide\cf0 >)aGuide \{\
+	\
+	\cf2 if\cf0  ([[aStep \cf6 highlightedItem\cf0 ] \cf6 isKindOfClass\cf0 :[\cf8 NSToolbarItem\cf0  \cf6 class\cf0 ]]) \{\
+		[aStep \cf4 setHighlightedItem\cf0 :[[[\cf2 self\cf0  \cf6 window\cf0 ] \cf6 toolbar\cf0 ] \cf4 itemWithIdentifier\cf0 :[(\cf8 NSToolbarItem\cf0  *)[aStep highlightedItem] \cf6 itemIdentifier\cf0 ]]]; \
+	\}\
+\}
+\f0\fs24 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+
+\b Further details
+\b0 \
+\
+Take a look at the sample application for an example of how to create and present a simple guide. The headers for each class contain further documentation on how to use the framework.\
+\
+If you've any questions, please contact me using the details below:\
+\
+Twitter: iKenndac\
+Email: daniel@kennettnet.co.uk\
+AIM: kenndac\
+\
+Thanks,\
+\
+-- Daniel}
