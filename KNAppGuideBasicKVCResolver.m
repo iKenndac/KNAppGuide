@@ -37,6 +37,10 @@
 		
 		for (NSString *key in keys) {
 			obj = [obj valueForKey:key];
+			
+			if ([obj isKindOfClass:[NSViewController class]]) {
+				[obj view];
+			}
 		}
 		
 		return obj;

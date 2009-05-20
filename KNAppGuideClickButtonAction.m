@@ -24,11 +24,10 @@
 
 -(AppGuideActionResult)performActionForStep:(id <KNAppGuideStep>)step {
 	
-	if (actionButton && !hasClickedButton) {
+	if (actionButton && !hasClickedButton && [[self button] isEnabled]) {
 		
 		[self actionButtonWasClicked:[self button]];
 		return kAppGuideActionSuccessful;
-		
 	} else if (hasClickedButton) {
 		return kAppGuideActionAlreadyCompleted;
 		
@@ -44,10 +43,9 @@
 -(IBAction)actionButtonWasClicked:(id)sender {
 	
 	[self willChangeValueForKey:@"hasBeenPerformed"];
-	hasClickedButton = YES;
-	[self didChangeValueForKey:@"hasBeenPerformed"];
-	
+	hasClickedButton = YES;	
 	[buttonTarget performSelector:buttonAction withObject:sender];
+	[self didChangeValueForKey:@"hasBeenPerformed"];
 }
 
 -(void)setButton:(id)aButton {

@@ -21,7 +21,17 @@
 
 @implementation KNAppGuideHUDPresenter
 
+-(id)init {
+	return [self initWithGuide:nil];
+}
+
 -(id)initWithGuide:(id <KNAppGuide>)g {
+	
+	if (!g) {
+		// Insist on having a guide
+		[self release];
+		return nil;
+	}
 	
 	if (self = [super initWithWindowNibName:@"KNAppGuideHUDPresenter"]) {
 		
@@ -92,6 +102,9 @@
 		[[self delegate] presenter:self willFinishPresentingGuide:[self guide] completed:([[self guide] currentStep] == [[[self guide] steps] lastObject])];
 	}
 	
+	[nextButton setTarget:nil];
+	[nextButton setAction:nil];
+	
 	[[self window] fadeOutWithDuration:0.25];
 	
 	if ([[self delegate] respondsToSelector:@selector(presenter:didFinishPresentingGuide:completed:)]) {
@@ -147,6 +160,10 @@
 	}
 }
 
+-(NSString *)previousButtonTitle {
+	return NSLocalizedStringFromTableInBundle(@"previous button title", @"KNAppGuideHUDPresenter", [NSBundle bundleForClass:[self class]], @"");
+}
+
 +(NSSet *)keyPathsForValuesAffectingGuideProgressTitle {
 	return [NSSet setWithObjects:@"guide", @"guide.currentStep", nil];
 }
@@ -155,6 +172,27 @@
 	return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"progress label", @"KNAppGuideHUDPresenter", [NSBundle bundleForClass:[self class]], @""), 
 			[[[self guide] steps] indexOfObject:[[self guide] currentStep]] + 1,
 			[[[self guide] steps] count]];
+}
+
+#pragma mark -
+#pragma mark Tags
+
++(NSSet *)keyPathsForValuesAffectingTaggedStepExplanation {
+	return [NSSet setWithObjects:@"guide", @"guide.currentStep", nil];
+}
+
+-(NSString *)taggedStepExplanation {
+	
+	NSString *str = [[[[self guide] currentStep] explanation] stringByReplacingOccurrencesOfString:@"%PREVIOUSBUTTONTITLE" 
+																						withString:NSLocalizedStringFromTableInBundle(@"previous button title", @"KNAppGuideHUDPresenter", [NSBundle bundleForClass:[self class]], @"")];
+	
+	str = [str stringByReplacingOccurrencesOfString:@"%NEXTBUTTONTITLE"
+										 withString:NSLocalizedStringFromTableInBundle(@"next button title", @"KNAppGuideHUDPresenter", [NSBundle bundleForClass:[self class]], @"")];
+	
+	str = [str stringByReplacingOccurrencesOfString:@"%DONEBUTTONTITLE"
+										 withString:NSLocalizedStringFromTableInBundle(@"done button title", @"KNAppGuideHUDPresenter", [NSBundle bundleForClass:[self class]], @"")];
+	
+	return str;
 }
 
 #pragma mark -
@@ -259,5 +297,15 @@
 	}
 }
 
+-(void)guide:(id <KNAppGuide>)aGuide action:(id <KNAppGuideAction>)anAction wasPerformedForStep:(id <KNAppGuideStep>)step {
+	
+	if (aGuide == [self guide]) {
+		// ^ Well, you never know!
+
+		if (step == [[[self guide] steps] lastObject] && step == [[self guide] currentStep]) {
+			[self closePresentation];
+		}
+	}
+}
 
 @end

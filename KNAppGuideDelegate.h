@@ -8,10 +8,14 @@
 
 @protocol KNAppGuideStep;
 @protocol KNAppGuide;
+@protocol KNAppGuideAction;
 
 @protocol KNAppGuideDelegate <NSObject>
 
+@optional
+
 -(void)guide:(id <KNAppGuide>)aGuide willMoveToStep:(id <KNAppGuideStep>)step;
 -(void)guide:(id <KNAppGuide>)aGuide didMoveToStep:(id <KNAppGuideStep>)step;
+-(void)guide:(id <KNAppGuide>)aGuide action:(id <KNAppGuideAction>)anAction wasPerformedForStep:(id <KNAppGuideStep>)step;
 
 @end

@@ -29,7 +29,7 @@
 
 -(AppGuideActionResult)performActionForStep:(id <KNAppGuideStep>)step {
 	
-	if (textField && !hasEnteredText) {
+	if (textField && !hasEnteredText && [[self textField] isEnabled]) {
 		
 		[self willChangeValueForKey:@"hasBeenPerformed"];
 		[textField setStringValue:[self defaultText]];

@@ -18,6 +18,7 @@
 	id <KNAppGuidePresenterDelegate> delegate;
 	KNAppGuideClassicHighlight *currentControlHighlight;
 	IBOutlet NSTextField *stepExplanationTextField;
+	IBOutlet NSButton *nextButton;
 }
 
 -(IBAction)clickNext:(id)sender;

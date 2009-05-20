@@ -80,10 +80,15 @@ static NSString *guideKVOContext = @"guideKVO";
 			return NO;
 		}
 		
-		[[self delegate] guide:self willMoveToStep:prevStep];
+		if ([[self delegate] respondsToSelector:@selector(guide:willMoveToStep:)]) {
+			[[self delegate] guide:self willMoveToStep:prevStep];
+		}
 		[self setCurrentStep:prevStep];
 		[prevStep stepWillBeShown];
-		[[self delegate] guide:self didMoveToStep:prevStep];
+		
+		if ([[self delegate] respondsToSelector:@selector(guide:didMoveToStep:)]) {
+			[[self delegate] guide:self didMoveToStep:prevStep];
+		}
 		
 		return YES;
 	}
@@ -125,10 +130,16 @@ static NSString *guideKVOContext = @"guideKVO";
 			return NO;
 		}
 		
-		[[self delegate] guide:self willMoveToStep:nextStep];
+		if ([[self delegate] respondsToSelector:@selector(guide:willMoveToStep:)]) {
+			[[self delegate] guide:self willMoveToStep:nextStep];
+		}
+		
 		[self setCurrentStep:nextStep];
 		[nextStep stepWillBeShown];
-		[[self delegate] guide:self didMoveToStep:nextStep];
+		
+		if ([[self delegate] respondsToSelector:@selector(guide:didMoveToStep:)]) {
+			[[self delegate] guide:self didMoveToStep:nextStep];
+		}
 		
 		return YES;
 	}
@@ -144,10 +155,17 @@ static NSString *guideKVOContext = @"guideKVO";
 		}
 		
 		KNAppGuideStep *step = [[self steps] objectAtIndex:0];
-		[[self delegate] guide:self willMoveToStep:step];
+		
+		if ([[self delegate] respondsToSelector:@selector(guide:willMoveToStep:)]) {
+			[[self delegate] guide:self willMoveToStep:step];
+		}
+		
 		[self setCurrentStep:step];
 		[step stepWillBeShown];
-		[[self delegate] guide:self didMoveToStep:step];
+		
+		if ([[self delegate] respondsToSelector:@selector(guide:didMoveToStep:)]) {
+			[[self delegate] guide:self didMoveToStep:step];
+		}
 	} else {
 		[self setCurrentStep:nil];
 	}
@@ -184,6 +202,10 @@ static NSString *guideKVOContext = @"guideKVO";
 		}
 		
 		if ([keyPath isEqualToString:@"action.hasBeenPerformed"]) {
+			
+			if ([[self delegate] respondsToSelector:@selector(guide:action:wasPerformedForStep:)]) {
+				[[self delegate] guide:self action:(id <KNAppGuideAction>)[object action] wasPerformedForStep:(id <KNAppGuideStep>)object];
+			}
 			
 			if (object == [self currentStep]) {
 				[self moveToNextStep];

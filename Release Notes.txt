@@ -1,0 +1,45 @@
+KNAppGuide Release Notes
+========================
+
+Version 0.2 (Released Wednesday, May 20th, 2009)
+================================================
+
+ -	KNAppGuideBasicKVCResolver now loads an NSViewController's view if it encounters 
+	one while resolving key paths. This improves resolving behaviour when referencing 
+	controls that are referenced by view controllers that haven't had their views displayed
+	yet.
+	
+ -	KNAppGuideHUDPresenter now supports tags in step explanations, to allow step text to 
+	automatically reflect the UI. The tags are:
+		- %NEXTBUTTONTITLE 
+		- %PREVIOUSBUTTONTITLE
+		- %DONEBUTTONTITLE
+	
+ -	KNAppGuideHUDPresenter no longer crashes if you double-click the done button fast enough
+	to click it again as the window is fading out.
+	
+ -	KNAppGuide[ClickButton/EnterText/EnterDate]Action no longer perform their actions if the 
+	target control is disabled - they return kAppGuideActionFailed instead.
+
+ -	KNAppGuideHUDPresenter no longer allows presenting a nil guide. If you try to call 
+	initWithGuide: with nil, you'll get nil back and nothing will happen.
+	
+ -	KNAppGuideDelegate protocol messages are now optional.
+
+ -	Added -(void)guide:(id <KNAppGuide>)aGuide action:(id <KNAppGuideAction>)anAction wasPerformedForStep:(id <KNAppGuideStep>)step; 
+	delegate method to KNAppGuideDelegate protocol.
+	
+ -	KNAppGuideHUDPresenter now automatically closes the guide when the action on the last step 
+	is performed by either the user or by clicking "Show Me". This prevents highlights remaining
+	when performing the last step removes a control from view (like dismissing a sheet). 
+	
+ -	KNAppGuideClickButtonAction no longer posts a KVO notification for hasBeenPerformed before it 
+	performs its action. This would cause the presenter to move onto the next step prematurely 
+	when "Show Me" was clicked, possibly causing havoc if the next step depends on the button
+	being pushed.
+
+
+Version 0.1 (Released Monday, May 18th, 2009)
+=============================================
+
+- Initial release.

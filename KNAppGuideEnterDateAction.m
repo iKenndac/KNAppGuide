@@ -29,7 +29,7 @@
 
 -(AppGuideActionResult)performActionForStep:(id <KNAppGuideStep>)step {
 	
-	if (datePicker && !hasEnteredDate) {
+	if (datePicker && !hasEnteredDate && [[self datePicker] isEnabled]) {
 		
 		[self willChangeValueForKey:@"hasBeenPerformed"];
 		[datePicker setDateValue:[self defaultDate]];
