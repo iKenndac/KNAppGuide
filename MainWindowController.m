@@ -11,6 +11,8 @@
 
 @implementation MainWindowController
 
+@synthesize datePickerIsHidden;
+
 -(IBAction)startGuideFromFile:(id)sender {
 
 	// This method instantiates a guide from the sample guide file included in the demo app and runs it.
@@ -42,8 +44,8 @@
 	id <KNAppGuideStep> step1 = [KNAppGuideStep stepWithExplanation:@"Welcome to the KNAppGuide demo application. This guide was created in code in the startGuideFromCode: "
 																	@"method in MainWindowController, and will walk you through the framework's "
 																	@"features and structure.\n\nTo get started, click the → button."
-															 action:nil
-													highlightedItem:nil];
+															 action:[KNAppGuideClickButtonAction actionForButton:aMenuItem]
+													highlightedItem:aMenuItem];
 	
 	id <KNAppGuideStep> step2 = [KNAppGuideStep stepWithExplanation:@"This HUD is where the user interacts with the guide. It has a few simple controls: \n\n"
 																	@"• The ← button goes back to the previous step.\n"
@@ -124,5 +126,8 @@
 	[sender setImage:[NSImage imageNamed:NSImageNameComputer]];
 }
 
+-(IBAction)chooseMenuItem:(id)sender {
+	NSBeep();
+}
 
 @end

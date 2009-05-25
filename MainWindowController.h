@@ -14,12 +14,18 @@
 	IBOutlet NSTextField *nameField;
 	IBOutlet NSToolbarItem *toolbarItem;
 	IBOutlet NSDatePicker *datePicker;
+	IBOutlet NSMenuItem *aMenuItem;
+	
+	BOOL datePickerIsHidden;
 }
+
+@property BOOL datePickerIsHidden;
 
 -(IBAction)startGuideFromFile:(id)sender;
 -(IBAction)startGuideFromCode:(id)sender;
 
 -(IBAction)clickButton:(id)sender;
 -(IBAction)clickToolbarItem:(id)sender;
+-(IBAction)chooseMenuItem:(id)sender;
 
 @end

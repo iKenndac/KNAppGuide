@@ -1,6 +1,28 @@
 KNAppGuide Release Notes
 ========================
 
+Version 0.3 (Released Monday, May 25th, 2009)
+=============================================
+
+ -	You can now highlight menu items in the app's mainMenu. To do so,
+	set a step's highlighted item to the menu item the user should choose. 
+	KNAppGuideHUDPresenter will do the right thing. Create a KNAppGuideClickButtonAction
+	with the menu item and the framework will perform the item's action when needed
+	and notice when it's been chosen by the user. 
+ 
+ -	KNAppGuideClickButtonAction will now attempt to send the 
+	button's -action down the responder chain if the button's
+	target is set to nil.
+	
+ -	Added a new delegate method to the KNAppGuidePresenterDelegate protocol:
+	-(NSString *)presenter:(id <KNAppGuidePresenter>)aPresenter willDisplayExplanation:(NSString *)anExplanation forStep:(id <KNAppGuideStep>)aStep inGuide:(id <KNAppGuide>)aGuide;
+
+	If you implement this, the presenter will use the returned string when displaying the step rather than the string 
+	contained in the step. The proposed step explanation string is contained in anExplanation with any built-in
+	tags (%NEXTBUTTONTITLE, %PREVIOUSBUTTONTITLE, %DONEBUTTONTITLE) already replaced with the final values. You might
+	use this method to implement your own app-specific tags. For example, I use this in the Clarus application to give 
+	"This area contains Chester's insurance policies..." instead of "This area contains your pet's insurance policies...".
+
 Version 0.2 (Released Wednesday, May 20th, 2009)
 ================================================
 

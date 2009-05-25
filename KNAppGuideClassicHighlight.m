@@ -9,6 +9,7 @@
 #import "KNAppGuideClassicHighlight.h"
 #import "KNAppGuideClassicHighlightView.h"
 #import "KNToolBarExtensions.h"
+#import "KNAppGuideClassicMenuItemHighlight.h"
 
 @implementation KNAppGuideClassicHighlight
 
@@ -18,6 +19,8 @@
 		return [KNAppGuideClassicHighlight highlightForView:item];
 	} else if ([item isKindOfClass:[NSToolbarItem class]]) {
 		return [KNAppGuideClassicHighlight highlightForView:[[item toolbar] viewForItem:item]];
+	} else if ([item isKindOfClass:[NSMenuItem class]]) {
+		return [KNAppGuideClassicMenuItemHighlight highlightForMenuItem:item];
 	} else {
 		return nil;
 	}
@@ -33,6 +36,7 @@
 	
 	return [[[KNAppGuideClassicHighlight alloc] initWithView:aView] autorelease];
  }
+
 
 -(id)initWithView:(NSView *)aView {
 	
@@ -70,10 +74,14 @@
 		[self setExcludedFromWindowsMenu:YES];
 		[self setOpaque:NO];
 		
-		[self positionOverView];	
+		if (![[self view] superview]) {
+			[self setLevel:NSPopUpMenuWindowLevel+1];
+			[self setHidesOnDeactivate:YES];
+		}
 		
+		[self positionOverView];
 		
-		[[aView window] addChildWindow:self ordered:NSWindowAbove];
+		//[[aView window] addChildWindow:self ordered:NSWindowAbove];
 		
 		NSEnableScreenUpdates();
 	}
@@ -106,19 +114,33 @@
 	// "5 * lineWidth" seems a little arbitrary, but setting it to (say) double the highlighted view's 
 	// dimensions starts to fail when you highlight large controls.
 	
-	NSRect viewFrame = [[[self view] superview] convertRectToBase:[[self view] frame]]; 
-	NSPoint controlOriginInScreenSpace = [[[self view] window] convertBaseToScreen:viewFrame.origin];
+	NSPoint controlOriginInScreenSpace = NSZeroPoint;
+	NSRect viewFrame;
+	
+	if ([[self view] superview]) { 
+		viewFrame = [[[self view] superview] convertRectToBase:[[self view] frame]]; 
+		controlOriginInScreenSpace = [[[self view] window] convertBaseToScreen:viewFrame.origin];
+	} else {
+		viewFrame = [[self view] frame];
+		controlOriginInScreenSpace = [[self view] frame].origin;
+	}
 	
 	NSPoint frameOrigin = NSMakePoint(controlOriginInScreenSpace.x + ((viewFrame.size.width / 2) - (contentRect.size.width / 2)), 
 									  controlOriginInScreenSpace.y + ((viewFrame.size.height / 2) - (contentRect.size.height / 2)));
 	
 	frameOrigin.y += 2.0; // Nudge the highlight up a bit to counter that the highlight oval is slightly off-centre
+		
+	
 	
 	contentRect.origin = frameOrigin;
 	[self setFrame:contentRect display:NO];
 	[highlightView setFrame:[[self contentView] bounds]];
 	
-	[[[self view] window] addChildWindow:self ordered:NSWindowAbove];
+	if ([[self view] window]) {
+		[[[self view] window] addChildWindow:self ordered:NSWindowAbove];
+	} else {
+		[self orderFront:nil];
+	}
 	
 	NSEnableScreenUpdates();
 }

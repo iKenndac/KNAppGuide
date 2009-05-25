@@ -37,4 +37,6 @@
 -(void)presenter:(id <KNAppGuidePresenter>)aPresenter willFinishPresentingGuide:(id <KNAppGuide>)aGuide completed:(BOOL)wasCompleted; // Called before the window is closed
 -(void)presenter:(id <KNAppGuidePresenter>)aPresenter didFinishPresentingGuide:(id <KNAppGuide>)aGuide completed:(BOOL)wasCompleted; // Called after the window is closed
 
+-(NSString *)presenter:(id <KNAppGuidePresenter>)aPresenter willDisplayExplanation:(NSString *)anExplanation forStep:(id <KNAppGuideStep>)aStep inGuide:(id <KNAppGuide>)aGuide;
+
 @end

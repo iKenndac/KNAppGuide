@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface KNAppGuideClassicHighlightView : NSView {
     CGFloat progress;
 	CGFloat lineWidth;

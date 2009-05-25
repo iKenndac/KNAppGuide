@@ -192,6 +192,11 @@
 	str = [str stringByReplacingOccurrencesOfString:@"%DONEBUTTONTITLE"
 										 withString:NSLocalizedStringFromTableInBundle(@"done button title", @"KNAppGuideHUDPresenter", [NSBundle bundleForClass:[self class]], @"")];
 	
+	
+	if ([[self delegate] respondsToSelector:@selector(presenter:willDisplayExplanation:forStep:inGuide:)]) {
+		str = [[self delegate] presenter:self willDisplayExplanation:str forStep:[[self guide] currentStep] inGuide:[self guide]];
+	}
+	
 	return str;
 }
 

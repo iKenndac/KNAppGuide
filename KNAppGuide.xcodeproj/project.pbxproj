@@ -11,6 +11,8 @@
 		501225B40FBC1C0B001C50D3 /* KNToolBarExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 501225B20FBC1C0B001C50D3 /* KNToolBarExtensions.h */; };
 		501225B50FBC1C0B001C50D3 /* KNToolBarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 501225B30FBC1C0B001C50D3 /* KNToolBarExtensions.m */; };
 		506492CB0FC4302600CF7528 /* Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 506492CA0FC4302600CF7528 /* Release Notes.txt */; };
+		506605380FC57BB900BE6BCE /* KNAppGuideClassicMenuItemHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5066052E0FC57A5B00BE6BCE /* KNAppGuideClassicMenuItemHighlight.m */; };
+		506605390FC57BBC00BE6BCE /* KNAppGuideClassicMenuItemHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 5066052D0FC57A5B00BE6BCE /* KNAppGuideClassicMenuItemHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		506625EA0FBAEFB500E60E52 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506625E90FBAEFB500E60E52 /* BGHUDAppKit.framework */; };
 		506626190FBAEFD100E60E52 /* BGHUDAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 506625E90FBAEFB500E60E52 /* BGHUDAppKit.framework */; };
 		506626820FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 506626800FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -108,6 +110,8 @@
 		504B87530FB2EBB300196F56 /* KNAppGuideStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuideStep.m; sourceTree = "<group>"; };
 		504B875A0FB2ED4400196F56 /* KNAppGuideAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuideAction.h; sourceTree = "<group>"; };
 		506492CA0FC4302600CF7528 /* Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Release Notes.txt"; sourceTree = "<group>"; };
+		5066052D0FC57A5B00BE6BCE /* KNAppGuideClassicMenuItemHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuideClassicMenuItemHighlight.h; sourceTree = "<group>"; };
+		5066052E0FC57A5B00BE6BCE /* KNAppGuideClassicMenuItemHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuideClassicMenuItemHighlight.m; sourceTree = "<group>"; };
 		506625E90FBAEFB500E60E52 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		506626800FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuideHUDPresenter.h; sourceTree = "<group>"; };
 		506626810FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuideHUDPresenter.m; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 			children = (
 				5066926B0FB43E1000009AC1 /* KNAppGuideClassicHighlight.h */,
 				5066926C0FB43E1000009AC1 /* KNAppGuideClassicHighlight.m */,
+				5066052D0FC57A5B00BE6BCE /* KNAppGuideClassicMenuItemHighlight.h */,
+				5066052E0FC57A5B00BE6BCE /* KNAppGuideClassicMenuItemHighlight.m */,
 				50685E730FBACB5100200E95 /* KNAppGuideClassicHighlightView.h */,
 				50685E720FBACB5100200E95 /* KNAppGuideClassicHighlightView.m */,
 			);
@@ -379,6 +385,7 @@
 				507446040FBC5157005C801A /* KNAppGuideEnterDateAction.h in Headers */,
 				50D633560FC1ACB1000C83AD /* KNAppGuideResolver.h in Headers */,
 				50D633C50FC1AEE6000C83AD /* KNAppGuideDelegate.h in Headers */,
+				506605390FC57BBC00BE6BCE /* KNAppGuideClassicMenuItemHighlight.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +492,7 @@
 				501225B50FBC1C0B001C50D3 /* KNToolBarExtensions.m in Sources */,
 				5074459C0FBC4B6D005C801A /* KNAppGuidePerformSelectorAction.m in Sources */,
 				507446050FBC5157005C801A /* KNAppGuideEnterDateAction.m in Sources */,
+				506605380FC57BB900BE6BCE /* KNAppGuideClassicMenuItemHighlight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

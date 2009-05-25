@@ -26,7 +26,12 @@
 	
 	if (actionButton && !hasClickedButton && [[self button] isEnabled]) {
 		
-		[self actionButtonWasClicked:[self button]];
+		if ([[self button] isKindOfClass:[NSButton class]]) {
+			[(NSButton *)[self button] performClick:nil];
+		} else {
+			[self actionButtonWasClicked:[self button]];
+		}
+			
 		return kAppGuideActionSuccessful;
 	} else if (hasClickedButton) {
 		return kAppGuideActionAlreadyCompleted;
@@ -43,8 +48,15 @@
 -(IBAction)actionButtonWasClicked:(id)sender {
 	
 	[self willChangeValueForKey:@"hasBeenPerformed"];
+	
+	if (!buttonTarget) {
+		[NSApp sendAction:buttonAction to:nil from:[self button]];
+	} else {
+		[buttonTarget performSelector:buttonAction withObject:sender];
+	}
+	
 	hasClickedButton = YES;	
-	[buttonTarget performSelector:buttonAction withObject:sender];
+	
 	[self didChangeValueForKey:@"hasBeenPerformed"];
 }
 
