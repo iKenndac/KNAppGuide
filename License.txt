@@ -8,11 +8,11 @@ This is the license agreement for all of the code contained in KNAppGuide. In a 
 
 3. If you redistribute the code without modifying it, you must include the original license. 
 
-4. In all cases, you must attribute KennettNet Software Limited in your product’s about box.
+4. In all cases, you must attribute KennettNet Software Limited as the original author in a reasonable place in your product.
 
 5. We’re not liable for the code, nor can we provide any support for it.
 
-6. If you don’t agree to this license, don’t download our code!
+6. If you don’t agree to this license, don’t use our code!
 
  
 

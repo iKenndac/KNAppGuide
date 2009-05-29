@@ -24,7 +24,7 @@
 @synthesize baseObject;
 
 -(id)resolveValue:(NSString *)path forKey:(NSString *)key inClassNamed:(NSString *)className {
-	
+
 	// Here, we simply traverse through the key path starting at [self baseObject]. We don't care what the key or className is.
 	
 	NSArray *keys = [path componentsSeparatedByString:@"."];

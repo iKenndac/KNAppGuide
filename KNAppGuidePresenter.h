@@ -19,6 +19,8 @@
 @property (nonatomic, readonly) id <KNAppGuide> guide;
 @property (nonatomic, readwrite, retain) id <KNAppGuidePresenterDelegate> delegate;
 
+-(NSWindow *)window;
+
 -(void)beginPresentation;
 -(void)closePresentation;
 

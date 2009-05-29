@@ -148,6 +148,10 @@
 #pragma mark -
 #pragma mark UI Labels and such
 
+-(NSString *)showMeButtonTitle {
+	return NSLocalizedStringFromTableInBundle(@"show me button title", @"KNAppGuideHUDPresenter", [NSBundle bundleForClass:[self class]], @"");
+}
+
 +(NSSet *)keyPathsForValuesAffectingNextButtonTitle {
 	return [NSSet setWithObjects:@"guide.hasFinished", nil];
 }

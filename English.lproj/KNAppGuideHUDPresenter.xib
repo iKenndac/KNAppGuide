@@ -151,12 +151,12 @@
 						<object class="BGHUDLabel" id="895623913">
 							<reference key="NSNextResponder" ref="416133379"/>
 							<int key="NSvFlags">290</int>
-							<string key="NSFrame">{{122, 10}, {184, 14}}</string>
+							<string key="NSFrame">{{41, 10}, {239, 14}}</string>
 							<reference key="NSSuperview" ref="416133379"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="503994742">
 								<int key="NSCellFlags">68288064</int>
-								<int key="NSCellFlags2">138544128</int>
+								<int key="NSCellFlags2">4326400</int>
 								<string key="NSContents">Step 1 of 3</string>
 								<reference key="NSSupport" ref="26"/>
 								<reference key="NSControlView" ref="895623913"/>
@@ -199,7 +199,7 @@
 						<object class="NSButton" id="179532567">
 							<reference key="NSNextResponder" ref="416133379"/>
 							<int key="NSvFlags">289</int>
-							<string key="NSFrame">{{311, 6}, {73, 19}}</string>
+							<string key="NSFrame">{{285, 6}, {99, 19}}</string>
 							<reference key="NSSuperview" ref="416133379"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="BGHUDButtonCell" key="NSCell" id="552668128">
@@ -440,6 +440,22 @@
 					</object>
 					<int key="connectionID">64</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: showMeButtonTitle</string>
+						<reference key="source" ref="179532567"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="179532567"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: showMeButtonTitle</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">showMeButtonTitle</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">65</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -661,7 +677,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">64</int>
+			<int key="maxID">65</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

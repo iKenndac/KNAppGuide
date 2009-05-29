@@ -126,6 +126,7 @@
 		506693790FB4556000009AC1 /* KNAppGuideClickButtonAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuideClickButtonAction.m; sourceTree = "<group>"; };
 		50685E720FBACB5100200E95 /* KNAppGuideClassicHighlightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuideClassicHighlightView.m; sourceTree = "<group>"; };
 		50685E730FBACB5100200E95 /* KNAppGuideClassicHighlightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuideClassicHighlightView.h; sourceTree = "<group>"; };
+		506B5D290FCC342700AB7C70 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/KNAppGuideHUDPresenter.strings; sourceTree = "<group>"; };
 		507445990FBC4B6D005C801A /* KNAppGuidePerformSelectorAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuidePerformSelectorAction.h; sourceTree = "<group>"; };
 		5074459A0FBC4B6D005C801A /* KNAppGuidePerformSelectorAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuidePerformSelectorAction.m; sourceTree = "<group>"; };
 		507446020FBC5157005C801A /* KNAppGuideEnterDateAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuideEnterDateAction.h; sourceTree = "<group>"; };
@@ -439,6 +440,13 @@
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KNAppGuide" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				fr,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* KNAppGuide */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -545,6 +553,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				509EAB3A0FBDBF3200FE82D8 /* English */,
+				506B5D290FCC342700AB7C70 /* fr */,
 			);
 			name = KNAppGuideHUDPresenter.strings;
 			sourceTree = "<group>";
@@ -654,7 +663,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};
@@ -665,9 +674,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = "";
+				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";

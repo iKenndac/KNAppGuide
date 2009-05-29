@@ -1,6 +1,18 @@
 KNAppGuide Release Notes
 ========================
 
+Version 0.3.1 (Released Friday, May 29th, 2009)
+=============================================
+
+ -	The KNAppGuidePresenter protocol now has a read-only -window property. It's OK for this
+	to return nil.
+
+ -	KNAppGuideClassicHighlight +highlightForView now checks if the given view belongs to a window.
+ 
+ -	Added French localization to KNAppGuideHUDPresenter.
+
+ -	Corrected license terms slightly.
+
 Version 0.3 (Released Monday, May 25th, 2009)
 =============================================
 

@@ -11,3 +11,4 @@
 "done button title" = "✔";
 "progress label" = "Step %d of %d";
 "default window title" = "%@ Help"; /* i.e., Music Rescue Help */
+"show me button title" = "Show Me";

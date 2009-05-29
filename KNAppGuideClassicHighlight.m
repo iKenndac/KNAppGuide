@@ -29,7 +29,7 @@
 
 +(KNAppGuideClassicHighlight *)highlightForView:(NSView *)aView {
 	
-	if ([aView isHiddenOrHasHiddenAncestor]) {
+	if ([aView isHiddenOrHasHiddenAncestor] || ![aView window]) {
 		// Can't highlight a hidden view!
 		return nil;
 	}
@@ -121,6 +121,7 @@
 		viewFrame = [[[self view] superview] convertRectToBase:[[self view] frame]]; 
 		controlOriginInScreenSpace = [[[self view] window] convertBaseToScreen:viewFrame.origin];
 	} else {
+		// A menu item!
 		viewFrame = [[self view] frame];
 		controlOriginInScreenSpace = [[self view] frame].origin;
 	}

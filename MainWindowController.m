@@ -17,7 +17,7 @@
 
 	// This method instantiates a guide from the sample guide file included in the demo app and runs it.
 	
-	id <KNAppGuide> guide = [KNAppGuide guideWithName:@"Sample Guide.plist" 
+	id <KNAppGuide> guide = [KNAppGuide guideWithName:@"General Guide.plist" 
 											 resolver:[KNAppGuideBasicKVCResolver basicResolverWithBaseObject:self]];
 	
 	KNAppGuideHUDPresenter *presenter = [[KNAppGuideHUDPresenter alloc] initWithGuide:guide];
