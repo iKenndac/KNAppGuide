@@ -104,6 +104,8 @@
 		32CA4F630368D1EE00C91783 /* KNAppGuide_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuide_Prefix.pch; sourceTree = "<group>"; };
 		501225B20FBC1C0B001C50D3 /* KNToolBarExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNToolBarExtensions.h; sourceTree = "<group>"; };
 		501225B30FBC1C0B001C50D3 /* KNToolBarExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNToolBarExtensions.m; sourceTree = "<group>"; };
+		50354FFA0FD833A900101941 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/KNAppGuideHUDPresenter.strings; sourceTree = "<group>"; };
+		50354FFB0FD833AD00101941 /* de_DE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de_DE; path = de_DE.lproj/KNAppGuideHUDPresenter.strings; sourceTree = "<group>"; };
 		504B874F0FB2EBAB00196F56 /* KNAppGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuide.h; sourceTree = "<group>"; };
 		504B87500FB2EBAB00196F56 /* KNAppGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuide.m; sourceTree = "<group>"; };
 		504B87520FB2EBB300196F56 /* KNAppGuideStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuideStep.h; sourceTree = "<group>"; };
@@ -446,6 +448,8 @@
 				French,
 				German,
 				fr,
+				es,
+				de_DE,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* KNAppGuide */;
 			projectDirPath = "";
@@ -554,6 +558,8 @@
 			children = (
 				509EAB3A0FBDBF3200FE82D8 /* English */,
 				506B5D290FCC342700AB7C70 /* fr */,
+				50354FFA0FD833A900101941 /* es */,
+				50354FFB0FD833AD00101941 /* de_DE */,
 			);
 			name = KNAppGuideHUDPresenter.strings;
 			sourceTree = "<group>";
