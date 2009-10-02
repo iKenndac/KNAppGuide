@@ -12,7 +12,7 @@
 @protocol KNAppGuideStep;
 @protocol KNAppGuidePresenterDelegate;
 
-@protocol KNAppGuidePresenter
+@protocol KNAppGuidePresenter <NSObject>
 
 -(id)initWithGuide:(id <KNAppGuide>)g;
 

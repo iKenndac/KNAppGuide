@@ -32,7 +32,25 @@
 	if (datePicker && !hasEnteredDate && [[self datePicker] isEnabled]) {
 		
 		[self willChangeValueForKey:@"hasBeenPerformed"];
-		[datePicker setDateValue:[self defaultDate]];
+		
+		// This addition thanks Jacob Gorban, Oct 1 2009
+		
+		NSDictionary *bindingInfo = [datePicker infoForBinding:@"value"];
+		
+		if (bindingInfo) {
+			id object = [bindingInfo valueForKey:NSObservedObjectKey];
+			NSString *keyPath = [bindingInfo valueForKey:NSObservedKeyPathKey];
+			[object setValue:[self defaultDate] forKey:keyPath];
+		} else {
+			[datePicker setDateValue:[self defaultDate]];
+		}
+		
+		if ([datePicker action] && [datePicker target]) {
+			[datePicker sendAction:[datePicker action] to:[datePicker target]];
+		}
+		
+		// End Jacob's addition
+		
 		hasEnteredDate = YES;
 		[self didChangeValueForKey:@"hasBeenPerformed"];
 		

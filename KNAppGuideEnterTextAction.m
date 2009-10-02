@@ -32,12 +32,30 @@
 	if (textField && !hasEnteredText && [[self textField] isEnabled]) {
 		
 		[self willChangeValueForKey:@"hasBeenPerformed"];
-		[textField setStringValue:[self defaultText]];
+		
+		// This addition thanks Jacob Gorban, Oct 1 2009
+		
+		NSDictionary *bindingInfo = [textField infoForBinding:@"value"];
+		
+		if (bindingInfo) {
+			id object = [bindingInfo valueForKey:NSObservedObjectKey];
+			NSString *keyPath = [bindingInfo valueForKey:NSObservedKeyPathKey];
+			[object setValue:[self defaultText] forKey:keyPath];
+		} else {
+			[textField setStringValue:[self defaultText]];
+		}
+		
+		if ([textField action] && [textField target]) {
+			[textField sendAction:[textField action] to:[textField target]];
+		}
+		
+		// End Jacob's addition
+		
 		hasEnteredText = YES;
 		[self didChangeValueForKey:@"hasBeenPerformed"];
 		
 		return kAppGuideActionSuccessful;
-		
+	
 	} else if (hasEnteredText) {
 		return kAppGuideActionAlreadyCompleted;
 		

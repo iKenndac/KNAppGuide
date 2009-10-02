@@ -16,6 +16,11 @@
 	IBOutlet NSDatePicker *datePicker;
 	IBOutlet NSMenuItem *aMenuItem;
 	
+	// This ivar is here so Garbage Collection doesn't collect
+	// our presented prematurely. If you're not using GC, the 
+	// presenter will retain itself so you don't need to bother. 
+	id <KNAppGuidePresenter> presenter;
+	
 	BOOL datePickerIsHidden;
 }
 

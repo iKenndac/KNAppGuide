@@ -1,6 +1,23 @@
 KNAppGuide Release Notes
 ========================
 
+Version 0.3.4
+=============
+
+ -	Added submission from Jacob Gorban that makes KNAppGuideEnterTextAction and 
+	KNAppGuideEnterDateAction work correctly with controls that have bindings.
+	
+ -	Fixed a couple of bugs in the demo app, including one that would make Garbage Collection
+	incorrectly destroy the guide presenter as soon as it was made since we don't keep an
+	ivar to it. 
+
+Version 0.3.3
+=============
+
+ -	Renamed German localization to de.lproj to work correctly on Mac OS X 10.6.
+
+ -	We now build a 32/64-bit universal binary, thanks to an updated BGHUDAppKit. 
+
 Version 0.3.2
 =============
 

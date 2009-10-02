@@ -17,19 +17,21 @@
 
 	// This method instantiates a guide from the sample guide file included in the demo app and runs it.
 	
-	id <KNAppGuide> guide = [KNAppGuide guideWithName:@"General Guide.plist" 
-											 resolver:[KNAppGuideBasicKVCResolver basicResolverWithBaseObject:self]];
+	id <KNAppGuide> guide = [KNAppGuide guideWithName:@"Sample Guide.plist" 
+							 resolver:[KNAppGuideBasicKVCResolver basicResolverWithBaseObject:self]];
 	
-	KNAppGuideHUDPresenter *presenter = [[KNAppGuideHUDPresenter alloc] initWithGuide:guide];
+	presenter = [[KNAppGuideHUDPresenter alloc] initWithGuide:guide];
+	[presenter setDelegate:self];
 	[presenter beginPresentation];
-	[presenter release];
 	
 }
 
--(void)presenter:(id <KNAppGuidePresenter>)aPresenter willMoveToStep:(id <KNAppGuideStep>)aStep inGuide:(id <KNAppGuide>)aGuide {
-	
-	if ([[aStep highlightedItem] isKindOfClass:[NSToolbarItem class]]) {
-		[aStep setHighlightedItem:[[[self window] toolbar] itemWithIdentifier:[(NSToolbarItem *)[aStep highlightedItem] itemIdentifier]]]; 
+-(void)presenter:(id <KNAppGuidePresenter>)aPresenter didFinishPresentingGuide:(id <KNAppGuide>)aGuide completed:(BOOL)wasCompleted {
+	// Called after the window is closed
+
+	if (aPresenter == presenter) {
+		[presenter release];
+		presenter = nil;
 	}
 }
 
@@ -110,10 +112,9 @@
 	
 	[guide setSteps:[NSArray arrayWithObjects:step1, step2, step3, step4, step5, step6, step7, step8, nil]];
 	
-	KNAppGuideHUDPresenter *presenter = [[KNAppGuideHUDPresenter alloc] initWithGuide:guide];
+	presenter = [[KNAppGuideHUDPresenter alloc] initWithGuide:guide];
+	[presenter setDelegate:self];
 	[presenter beginPresentation];
-	[presenter release];
-	[guide release];
 }
 
 #pragma mark -
