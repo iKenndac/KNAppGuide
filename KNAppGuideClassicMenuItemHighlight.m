@@ -129,6 +129,8 @@
 			
 			CFRelease(title);
 		}
+		
+		CFRelease(menuBarRef);
 	}
 	
 	if (!NSEqualRects(rect, NSZeroRect)) {
@@ -137,7 +139,6 @@
 	}
 		
 	CFRelease(appElementRef);
-	CFRelease(menuBarRef);
 	
 	return rect;
 }
