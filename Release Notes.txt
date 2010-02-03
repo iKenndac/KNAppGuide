@@ -1,8 +1,8 @@
 KNAppGuide Release Notes
 ========================
 
-Version 0.3.4
-=============
+Version 0.3.4 (Released Friday, October 2nd, 2009)
+==================================================
 
  -	Added submission from Jacob Gorban that makes KNAppGuideEnterTextAction and 
 	KNAppGuideEnterDateAction work correctly with controls that have bindings.
