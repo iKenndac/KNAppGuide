@@ -17,8 +17,6 @@
 		506626190FBAEFD100E60E52 /* BGHUDAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 506625E90FBAEFB500E60E52 /* BGHUDAppKit.framework */; };
 		506626820FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 506626800FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		506626830FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 506626810FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.m */; };
-		5066270D0FBB008B00E60E52 /* NSWindow+Fade.h in Headers */ = {isa = PBXBuildFile; fileRef = 5066270B0FBB008B00E60E52 /* NSWindow+Fade.h */; };
-		5066270E0FBB008B00E60E52 /* NSWindow+Fade.m in Sources */ = {isa = PBXBuildFile; fileRef = 5066270C0FBB008B00E60E52 /* NSWindow+Fade.m */; };
 		506691E30FB431A800009AC1 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506691E20FB431A800009AC1 /* MainWindowController.m */; };
 		50685E740FBACB5100200E95 /* KNAppGuideClassicHighlightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50685E720FBACB5100200E95 /* KNAppGuideClassicHighlightView.m */; };
 		50685E750FBACB5100200E95 /* KNAppGuideClassicHighlightView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50685E730FBACB5100200E95 /* KNAppGuideClassicHighlightView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +54,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		9679260712C90B27001CF411 /* NSWindow+Fade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9679260612C90B27001CF411 /* NSWindow+Fade.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +116,6 @@
 		506625E90FBAEFB500E60E52 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		506626800FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuideHUDPresenter.h; sourceTree = "<group>"; };
 		506626810FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAppGuideHUDPresenter.m; sourceTree = "<group>"; };
-		5066270B0FBB008B00E60E52 /* NSWindow+Fade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Fade.h"; sourceTree = "<group>"; };
-		5066270C0FBB008B00E60E52 /* NSWindow+Fade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Fade.m"; sourceTree = "<group>"; };
 		506691D80FB42E8100009AC1 /* KNAppGuidePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAppGuidePresenter.h; sourceTree = "<group>"; };
 		506691E10FB431A800009AC1 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		506691E20FB431A800009AC1 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
@@ -151,6 +148,8 @@
 		50E27D4C0FBB2EA800A0E3FA /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KNAppGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNAppGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9679260512C90B27001CF411 /* NSWindow+Fade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSWindow+Fade.h"; path = "../../Frameworks/KNSharedCodeRepository/Extensions/NSWindow+Fade.h"; sourceTree = SOURCE_ROOT; };
+		9679260612C90B27001CF411 /* NSWindow+Fade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSWindow+Fade.m"; path = "../../Frameworks/KNSharedCodeRepository/Extensions/NSWindow+Fade.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,10 +260,10 @@
 		506626FF0FBB008000E60E52 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5066270B0FBB008B00E60E52 /* NSWindow+Fade.h */,
-				5066270C0FBB008B00E60E52 /* NSWindow+Fade.m */,
 				501225B20FBC1C0B001C50D3 /* KNToolBarExtensions.h */,
 				501225B30FBC1C0B001C50D3 /* KNToolBarExtensions.m */,
+				9679260512C90B27001CF411 /* NSWindow+Fade.h */,
+				9679260612C90B27001CF411 /* NSWindow+Fade.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -382,7 +381,6 @@
 				5089673F0FB9CDA700439892 /* KNAppGuideEnterTextAction.h in Headers */,
 				50685E750FBACB5100200E95 /* KNAppGuideClassicHighlightView.h in Headers */,
 				506626820FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.h in Headers */,
-				5066270D0FBB008B00E60E52 /* NSWindow+Fade.h in Headers */,
 				501225B40FBC1C0B001C50D3 /* KNToolBarExtensions.h in Headers */,
 				5074459B0FBC4B6D005C801A /* KNAppGuidePerformSelectorAction.h in Headers */,
 				507446040FBC5157005C801A /* KNAppGuideEnterDateAction.h in Headers */,
@@ -441,6 +439,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KNAppGuide" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -500,7 +499,6 @@
 				508967400FB9CDA700439892 /* KNAppGuideEnterTextAction.m in Sources */,
 				50685E740FBACB5100200E95 /* KNAppGuideClassicHighlightView.m in Sources */,
 				506626830FBAF7DF00E60E52 /* KNAppGuideHUDPresenter.m in Sources */,
-				5066270E0FBB008B00E60E52 /* NSWindow+Fade.m in Sources */,
 				501225B50FBC1C0B001C50D3 /* KNToolBarExtensions.m in Sources */,
 				5074459C0FBC4B6D005C801A /* KNAppGuidePerformSelectorAction.m in Sources */,
 				507446050FBC5157005C801A /* KNAppGuideEnterDateAction.m in Sources */,
@@ -515,6 +513,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				506691E30FB431A800009AC1 /* MainWindowController.m in Sources */,
 				509AC34B0FBD61DE0017FC4F /* KNToolBarExtensions.m in Sources */,
+				9679260712C90B27001CF411 /* NSWindow+Fade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +602,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					i386,
+					x86_64,
+				);
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -681,7 +683,10 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					x86_64,
+					i386,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -689,7 +694,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
-				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
